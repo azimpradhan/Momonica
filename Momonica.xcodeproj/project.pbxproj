@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		058C552A18A461A700C3E534 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552918A461A700C3E534 /* Foundation.framework */; };
+		058C552C18A461A700C3E534 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552B18A461A700C3E534 /* CoreGraphics.framework */; };
+		058C552E18A461A700C3E534 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552D18A461A700C3E534 /* UIKit.framework */; };
+		058C553018A461A700C3E534 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552F18A461A700C3E534 /* GLKit.framework */; };
+		058C553218A461A700C3E534 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C553118A461A700C3E534 /* OpenGLES.framework */; };
+		058C553818A461A700C3E534 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 058C553618A461A700C3E534 /* InfoPlist.strings */; };
+		058C553A18A461A700C3E534 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C553918A461A700C3E534 /* main.m */; };
+		058C553E18A461A700C3E534 /* MomonicaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C553D18A461A700C3E534 /* MomonicaAppDelegate.m */; };
+		058C554118A461A700C3E534 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058C553F18A461A700C3E534 /* Main_iPhone.storyboard */; };
+		058C554418A461A700C3E534 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058C554218A461A700C3E534 /* Main_iPad.storyboard */; };
+		058C554618A461A700C3E534 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 058C554518A461A700C3E534 /* Shader.fsh */; };
+		058C554818A461A700C3E534 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 058C554718A461A700C3E534 /* Shader.vsh */; };
+		058C554B18A461A700C3E534 /* MomonicaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C554A18A461A700C3E534 /* MomonicaViewController.m */; };
+		058C554D18A461A700C3E534 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058C554C18A461A700C3E534 /* Images.xcassets */; };
+		058C555418A461A700C3E534 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C555318A461A700C3E534 /* XCTest.framework */; };
+		058C555518A461A700C3E534 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552918A461A700C3E534 /* Foundation.framework */; };
+		058C555618A461A700C3E534 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552D18A461A700C3E534 /* UIKit.framework */; };
+		058C555E18A461A700C3E534 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 058C555C18A461A700C3E534 /* InfoPlist.strings */; };
+		058C556018A461A700C3E534 /* MomonicaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C555F18A461A700C3E534 /* MomonicaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		058C555718A461A700C3E534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 058C551E18A461A700C3E534 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 058C552518A461A700C3E534;
+			remoteInfo = Momonica;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		058C552618A461A700C3E534 /* Momonica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momonica.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		058C552918A461A700C3E534 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		058C552B18A461A700C3E534 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		058C552D18A461A700C3E534 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		058C552F18A461A700C3E534 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		058C553118A461A700C3E534 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		058C553518A461A700C3E534 /* Momonica-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Momonica-Info.plist"; sourceTree = "<group>"; };
+		058C553718A461A700C3E534 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		058C553918A461A700C3E534 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		058C553B18A461A700C3E534 /* Momonica-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Momonica-Prefix.pch"; sourceTree = "<group>"; };
+		058C553C18A461A700C3E534 /* MomonicaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomonicaAppDelegate.h; sourceTree = "<group>"; };
+		058C553D18A461A700C3E534 /* MomonicaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomonicaAppDelegate.m; sourceTree = "<group>"; };
+		058C554018A461A700C3E534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		058C554318A461A700C3E534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		058C554518A461A700C3E534 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		058C554718A461A700C3E534 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		058C554918A461A700C3E534 /* MomonicaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomonicaViewController.h; sourceTree = "<group>"; };
+		058C554A18A461A700C3E534 /* MomonicaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomonicaViewController.m; sourceTree = "<group>"; };
+		058C554C18A461A700C3E534 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		058C555218A461A700C3E534 /* MomonicaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomonicaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		058C555318A461A700C3E534 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		058C555B18A461A700C3E534 /* MomonicaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MomonicaTests-Info.plist"; sourceTree = "<group>"; };
+		058C555D18A461A700C3E534 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		058C555F18A461A700C3E534 /* MomonicaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomonicaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		058C552318A461A700C3E534 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058C553218A461A700C3E534 /* OpenGLES.framework in Frameworks */,
+				058C552C18A461A700C3E534 /* CoreGraphics.framework in Frameworks */,
+				058C552E18A461A700C3E534 /* UIKit.framework in Frameworks */,
+				058C553018A461A700C3E534 /* GLKit.framework in Frameworks */,
+				058C552A18A461A700C3E534 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		058C554F18A461A700C3E534 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058C555418A461A700C3E534 /* XCTest.framework in Frameworks */,
+				058C555618A461A700C3E534 /* UIKit.framework in Frameworks */,
+				058C555518A461A700C3E534 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		058C551D18A461A700C3E534 = {
+			isa = PBXGroup;
+			children = (
+				058C553318A461A700C3E534 /* Momonica */,
+				058C555918A461A700C3E534 /* MomonicaTests */,
+				058C552818A461A700C3E534 /* Frameworks */,
+				058C552718A461A700C3E534 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		058C552718A461A700C3E534 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				058C552618A461A700C3E534 /* Momonica.app */,
+				058C555218A461A700C3E534 /* MomonicaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		058C552818A461A700C3E534 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				058C552918A461A700C3E534 /* Foundation.framework */,
+				058C552B18A461A700C3E534 /* CoreGraphics.framework */,
+				058C552D18A461A700C3E534 /* UIKit.framework */,
+				058C552F18A461A700C3E534 /* GLKit.framework */,
+				058C553118A461A700C3E534 /* OpenGLES.framework */,
+				058C555318A461A700C3E534 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		058C553318A461A700C3E534 /* Momonica */ = {
+			isa = PBXGroup;
+			children = (
+				058C553C18A461A700C3E534 /* MomonicaAppDelegate.h */,
+				058C553D18A461A700C3E534 /* MomonicaAppDelegate.m */,
+				058C553F18A461A700C3E534 /* Main_iPhone.storyboard */,
+				058C554218A461A700C3E534 /* Main_iPad.storyboard */,
+				058C554518A461A700C3E534 /* Shader.fsh */,
+				058C554718A461A700C3E534 /* Shader.vsh */,
+				058C554918A461A700C3E534 /* MomonicaViewController.h */,
+				058C554A18A461A700C3E534 /* MomonicaViewController.m */,
+				058C554C18A461A700C3E534 /* Images.xcassets */,
+				058C553418A461A700C3E534 /* Supporting Files */,
+			);
+			path = Momonica;
+			sourceTree = "<group>";
+		};
+		058C553418A461A700C3E534 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				058C553518A461A700C3E534 /* Momonica-Info.plist */,
+				058C553618A461A700C3E534 /* InfoPlist.strings */,
+				058C553918A461A700C3E534 /* main.m */,
+				058C553B18A461A700C3E534 /* Momonica-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		058C555918A461A700C3E534 /* MomonicaTests */ = {
+			isa = PBXGroup;
+			children = (
+				058C555F18A461A700C3E534 /* MomonicaTests.m */,
+				058C555A18A461A700C3E534 /* Supporting Files */,
+			);
+			path = MomonicaTests;
+			sourceTree = "<group>";
+		};
+		058C555A18A461A700C3E534 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				058C555B18A461A700C3E534 /* MomonicaTests-Info.plist */,
+				058C555C18A461A700C3E534 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		058C552518A461A700C3E534 /* Momonica */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 058C556318A461A700C3E534 /* Build configuration list for PBXNativeTarget "Momonica" */;
+			buildPhases = (
+				058C552218A461A700C3E534 /* Sources */,
+				058C552318A461A700C3E534 /* Frameworks */,
+				058C552418A461A700C3E534 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Momonica;
+			productName = Momonica;
+			productReference = 058C552618A461A700C3E534 /* Momonica.app */;
+			productType = "com.apple.product-type.application";
+		};
+		058C555118A461A700C3E534 /* MomonicaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 058C556618A461A700C3E534 /* Build configuration list for PBXNativeTarget "MomonicaTests" */;
+			buildPhases = (
+				058C554E18A461A700C3E534 /* Sources */,
+				058C554F18A461A700C3E534 /* Frameworks */,
+				058C555018A461A700C3E534 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				058C555818A461A700C3E534 /* PBXTargetDependency */,
+			);
+			name = MomonicaTests;
+			productName = MomonicaTests;
+			productReference = 058C555218A461A700C3E534 /* MomonicaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		058C551E18A461A700C3E534 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Momonica;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Stanford University";
+				TargetAttributes = {
+					058C555118A461A700C3E534 = {
+						TestTargetID = 058C552518A461A700C3E534;
+					};
+				};
+			};
+			buildConfigurationList = 058C552118A461A700C3E534 /* Build configuration list for PBXProject "Momonica" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 058C551D18A461A700C3E534;
+			productRefGroup = 058C552718A461A700C3E534 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				058C552518A461A700C3E534 /* Momonica */,
+				058C555118A461A700C3E534 /* MomonicaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		058C552418A461A700C3E534 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058C554618A461A700C3E534 /* Shader.fsh in Resources */,
+				058C554418A461A700C3E534 /* Main_iPad.storyboard in Resources */,
+				058C554118A461A700C3E534 /* Main_iPhone.storyboard in Resources */,
+				058C554D18A461A700C3E534 /* Images.xcassets in Resources */,
+				058C553818A461A700C3E534 /* InfoPlist.strings in Resources */,
+				058C554818A461A700C3E534 /* Shader.vsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		058C555018A461A700C3E534 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058C555E18A461A700C3E534 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		058C552218A461A700C3E534 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058C554B18A461A700C3E534 /* MomonicaViewController.m in Sources */,
+				058C553A18A461A700C3E534 /* main.m in Sources */,
+				058C553E18A461A700C3E534 /* MomonicaAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		058C554E18A461A700C3E534 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058C556018A461A700C3E534 /* MomonicaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		058C555818A461A700C3E534 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 058C552518A461A700C3E534 /* Momonica */;
+			targetProxy = 058C555718A461A700C3E534 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		058C553618A461A700C3E534 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				058C553718A461A700C3E534 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		058C553F18A461A700C3E534 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				058C554018A461A700C3E534 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		058C554218A461A700C3E534 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				058C554318A461A700C3E534 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		058C555C18A461A700C3E534 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				058C555D18A461A700C3E534 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		058C556118A461A700C3E534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		058C556218A461A700C3E534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		058C556418A461A700C3E534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Momonica/Momonica-Prefix.pch";
+				INFOPLIST_FILE = "Momonica/Momonica-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		058C556518A461A700C3E534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Momonica/Momonica-Prefix.pch";
+				INFOPLIST_FILE = "Momonica/Momonica-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		058C556718A461A700C3E534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Momonica.app/Momonica";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Momonica/Momonica-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MomonicaTests/MomonicaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		058C556818A461A700C3E534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Momonica.app/Momonica";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Momonica/Momonica-Prefix.pch";
+				INFOPLIST_FILE = "MomonicaTests/MomonicaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		058C552118A461A700C3E534 /* Build configuration list for PBXProject "Momonica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				058C556118A461A700C3E534 /* Debug */,
+				058C556218A461A700C3E534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		058C556318A461A700C3E534 /* Build configuration list for PBXNativeTarget "Momonica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				058C556418A461A700C3E534 /* Debug */,
+				058C556518A461A700C3E534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		058C556618A461A700C3E534 /* Build configuration list for PBXNativeTarget "MomonicaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				058C556718A461A700C3E534 /* Debug */,
+				058C556818A461A700C3E534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 058C551E18A461A700C3E534 /* Project object */;
+}
