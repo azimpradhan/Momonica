@@ -17,15 +17,25 @@
 		058C553E18A461A700C3E534 /* MomonicaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C553D18A461A700C3E534 /* MomonicaAppDelegate.m */; };
 		058C554118A461A700C3E534 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058C553F18A461A700C3E534 /* Main_iPhone.storyboard */; };
 		058C554418A461A700C3E534 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058C554218A461A700C3E534 /* Main_iPad.storyboard */; };
-		058C554618A461A700C3E534 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 058C554518A461A700C3E534 /* Shader.fsh */; };
-		058C554818A461A700C3E534 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 058C554718A461A700C3E534 /* Shader.vsh */; };
-		058C554B18A461A700C3E534 /* MomonicaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C554A18A461A700C3E534 /* MomonicaViewController.m */; };
+		058C554B18A461A700C3E534 /* MomonicaViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058C554A18A461A700C3E534 /* MomonicaViewController.mm */; };
 		058C554D18A461A700C3E534 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058C554C18A461A700C3E534 /* Images.xcassets */; };
 		058C555418A461A700C3E534 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C555318A461A700C3E534 /* XCTest.framework */; };
 		058C555518A461A700C3E534 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552918A461A700C3E534 /* Foundation.framework */; };
 		058C555618A461A700C3E534 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552D18A461A700C3E534 /* UIKit.framework */; };
 		058C555E18A461A700C3E534 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 058C555C18A461A700C3E534 /* InfoPlist.strings */; };
 		058C556018A461A700C3E534 /* MomonicaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C555F18A461A700C3E534 /* MomonicaTests.m */; };
+		05D31CE718A812B500012E97 /* mo_accel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31CE018A812B500012E97 /* mo_accel.mm */; };
+		05D31CE818A812B500012E97 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31CE218A812B500012E97 /* mo_audio.mm */; };
+		05D31CE918A812B500012E97 /* mo_gfx.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31CE418A812B500012E97 /* mo_gfx.mm */; };
+		05D31CEA18A812B500012E97 /* mo_touch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31CE618A812B500012E97 /* mo_touch.mm */; };
+		05D31CEE18A8132D00012E97 /* MomonicaGlobals.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31CEC18A8132D00012E97 /* MomonicaGlobals.mm */; };
+		05D31CF018A820E600012E97 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D31CEF18A820E600012E97 /* AudioToolbox.framework */; };
+		05D31CF618A8272700012E97 /* Projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = 05D31CF218A8272700012E97 /* Projectile.png */; };
+		05D31CF718A8272700012E97 /* SlingEnd.png in Resources */ = {isa = PBXBuildFile; fileRef = 05D31CF318A8272700012E97 /* SlingEnd.png */; };
+		05D31CF818A8272700012E97 /* stanford.png in Resources */ = {isa = PBXBuildFile; fileRef = 05D31CF418A8272700012E97 /* stanford.png */; };
+		05D31CF918A8272700012E97 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 05D31CF518A8272700012E97 /* texture.png */; };
+		05D31CFF18A82D9100012E97 /* MomonicaRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31CFD18A82D9100012E97 /* MomonicaRenderer.mm */; };
+		05D31D0218A8469000012E97 /* MomonicaEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31D0018A8469000012E97 /* MomonicaEntity.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,16 +63,34 @@
 		058C553D18A461A700C3E534 /* MomonicaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomonicaAppDelegate.m; sourceTree = "<group>"; };
 		058C554018A461A700C3E534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		058C554318A461A700C3E534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		058C554518A461A700C3E534 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
-		058C554718A461A700C3E534 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
 		058C554918A461A700C3E534 /* MomonicaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomonicaViewController.h; sourceTree = "<group>"; };
-		058C554A18A461A700C3E534 /* MomonicaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomonicaViewController.m; sourceTree = "<group>"; };
+		058C554A18A461A700C3E534 /* MomonicaViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MomonicaViewController.mm; sourceTree = "<group>"; };
 		058C554C18A461A700C3E534 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		058C555218A461A700C3E534 /* MomonicaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomonicaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		058C555318A461A700C3E534 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		058C555B18A461A700C3E534 /* MomonicaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MomonicaTests-Info.plist"; sourceTree = "<group>"; };
 		058C555D18A461A700C3E534 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		058C555F18A461A700C3E534 /* MomonicaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomonicaTests.m; sourceTree = "<group>"; };
+		05D31CDF18A812B500012E97 /* mo_accel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_accel.h; path = Momonica/api/momu/mo_accel.h; sourceTree = "<group>"; };
+		05D31CE018A812B500012E97 /* mo_accel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_accel.mm; path = Momonica/api/momu/mo_accel.mm; sourceTree = "<group>"; };
+		05D31CE118A812B500012E97 /* mo_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_audio.h; path = Momonica/api/momu/mo_audio.h; sourceTree = "<group>"; };
+		05D31CE218A812B500012E97 /* mo_audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_audio.mm; path = Momonica/api/momu/mo_audio.mm; sourceTree = "<group>"; };
+		05D31CE318A812B500012E97 /* mo_gfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_gfx.h; path = Momonica/api/momu/mo_gfx.h; sourceTree = "<group>"; };
+		05D31CE418A812B500012E97 /* mo_gfx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_gfx.mm; path = Momonica/api/momu/mo_gfx.mm; sourceTree = "<group>"; };
+		05D31CE518A812B500012E97 /* mo_touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_touch.h; path = Momonica/api/momu/mo_touch.h; sourceTree = "<group>"; };
+		05D31CE618A812B500012E97 /* mo_touch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_touch.mm; path = Momonica/api/momu/mo_touch.mm; sourceTree = "<group>"; };
+		05D31CEC18A8132D00012E97 /* MomonicaGlobals.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MomonicaGlobals.mm; path = Momonica/core/MomonicaGlobals.mm; sourceTree = "<group>"; };
+		05D31CED18A8132D00012E97 /* MomonicaGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MomonicaGlobals.h; path = Momonica/core/MomonicaGlobals.h; sourceTree = "<group>"; };
+		05D31CEF18A820E600012E97 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		05D31CF218A8272700012E97 /* Projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Projectile.png; sourceTree = "<group>"; };
+		05D31CF318A8272700012E97 /* SlingEnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlingEnd.png; sourceTree = "<group>"; };
+		05D31CF418A8272700012E97 /* stanford.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stanford.png; sourceTree = "<group>"; };
+		05D31CF518A8272700012E97 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
+		05D31CFD18A82D9100012E97 /* MomonicaRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MomonicaRenderer.mm; path = Momonica/core/MomonicaRenderer.mm; sourceTree = "<group>"; };
+		05D31CFE18A82D9100012E97 /* MomonicaRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MomonicaRenderer.h; path = Momonica/core/MomonicaRenderer.h; sourceTree = "<group>"; };
+		05D31D0018A8469000012E97 /* MomonicaEntity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MomonicaEntity.mm; path = Momonica/core/MomonicaEntity.mm; sourceTree = "<group>"; };
+		05D31D0118A8469000012E97 /* MomonicaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MomonicaEntity.h; path = Momonica/core/MomonicaEntity.h; sourceTree = "<group>"; };
+		05D31D0318A8536700012E97 /* mo_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_def.h; path = Momonica/api/momu/mo_def.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05D31CF018A820E600012E97 /* AudioToolbox.framework in Frameworks */,
 				058C553218A461A700C3E534 /* OpenGLES.framework in Frameworks */,
 				058C552C18A461A700C3E534 /* CoreGraphics.framework in Frameworks */,
 				058C552E18A461A700C3E534 /* UIKit.framework in Frameworks */,
@@ -94,6 +123,9 @@
 		058C551D18A461A700C3E534 = {
 			isa = PBXGroup;
 			children = (
+				05D31CDA18A80FDA00012E97 /* api */,
+				05D31CD918A80FCF00012E97 /* core */,
+				05D31CDB18A80FF700012E97 /* data */,
 				058C553318A461A700C3E534 /* Momonica */,
 				058C555918A461A700C3E534 /* MomonicaTests */,
 				058C552818A461A700C3E534 /* Frameworks */,
@@ -113,6 +145,7 @@
 		058C552818A461A700C3E534 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05D31CEF18A820E600012E97 /* AudioToolbox.framework */,
 				058C552918A461A700C3E534 /* Foundation.framework */,
 				058C552B18A461A700C3E534 /* CoreGraphics.framework */,
 				058C552D18A461A700C3E534 /* UIKit.framework */,
@@ -130,10 +163,8 @@
 				058C553D18A461A700C3E534 /* MomonicaAppDelegate.m */,
 				058C553F18A461A700C3E534 /* Main_iPhone.storyboard */,
 				058C554218A461A700C3E534 /* Main_iPad.storyboard */,
-				058C554518A461A700C3E534 /* Shader.fsh */,
-				058C554718A461A700C3E534 /* Shader.vsh */,
 				058C554918A461A700C3E534 /* MomonicaViewController.h */,
-				058C554A18A461A700C3E534 /* MomonicaViewController.m */,
+				058C554A18A461A700C3E534 /* MomonicaViewController.mm */,
 				058C554C18A461A700C3E534 /* Images.xcassets */,
 				058C553418A461A700C3E534 /* Supporting Files */,
 			);
@@ -167,6 +198,63 @@
 				058C555C18A461A700C3E534 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05D31CD918A80FCF00012E97 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				05D31CEC18A8132D00012E97 /* MomonicaGlobals.mm */,
+				05D31CED18A8132D00012E97 /* MomonicaGlobals.h */,
+				05D31CFD18A82D9100012E97 /* MomonicaRenderer.mm */,
+				05D31CFE18A82D9100012E97 /* MomonicaRenderer.h */,
+				05D31D0018A8469000012E97 /* MomonicaEntity.mm */,
+				05D31D0118A8469000012E97 /* MomonicaEntity.h */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		05D31CDA18A80FDA00012E97 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				05D31CEB18A812C200012E97 /* momu */,
+			);
+			name = api;
+			sourceTree = "<group>";
+		};
+		05D31CDB18A80FF700012E97 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				05D31CF118A8272700012E97 /* textures */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		05D31CEB18A812C200012E97 /* momu */ = {
+			isa = PBXGroup;
+			children = (
+				05D31D0318A8536700012E97 /* mo_def.h */,
+				05D31CDF18A812B500012E97 /* mo_accel.h */,
+				05D31CE018A812B500012E97 /* mo_accel.mm */,
+				05D31CE118A812B500012E97 /* mo_audio.h */,
+				05D31CE218A812B500012E97 /* mo_audio.mm */,
+				05D31CE318A812B500012E97 /* mo_gfx.h */,
+				05D31CE418A812B500012E97 /* mo_gfx.mm */,
+				05D31CE518A812B500012E97 /* mo_touch.h */,
+				05D31CE618A812B500012E97 /* mo_touch.mm */,
+			);
+			name = momu;
+			sourceTree = "<group>";
+		};
+		05D31CF118A8272700012E97 /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				05D31CF218A8272700012E97 /* Projectile.png */,
+				05D31CF318A8272700012E97 /* SlingEnd.png */,
+				05D31CF418A8272700012E97 /* stanford.png */,
+				05D31CF518A8272700012E97 /* texture.png */,
+			);
+			name = textures;
+			path = Momonica/data/textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,12 +334,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				058C554618A461A700C3E534 /* Shader.fsh in Resources */,
 				058C554418A461A700C3E534 /* Main_iPad.storyboard in Resources */,
+				05D31CF718A8272700012E97 /* SlingEnd.png in Resources */,
 				058C554118A461A700C3E534 /* Main_iPhone.storyboard in Resources */,
+				05D31CF618A8272700012E97 /* Projectile.png in Resources */,
+				05D31CF818A8272700012E97 /* stanford.png in Resources */,
 				058C554D18A461A700C3E534 /* Images.xcassets in Resources */,
 				058C553818A461A700C3E534 /* InfoPlist.strings in Resources */,
-				058C554818A461A700C3E534 /* Shader.vsh in Resources */,
+				05D31CF918A8272700012E97 /* texture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +360,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				058C554B18A461A700C3E534 /* MomonicaViewController.m in Sources */,
+				05D31CE818A812B500012E97 /* mo_audio.mm in Sources */,
+				05D31CEA18A812B500012E97 /* mo_touch.mm in Sources */,
+				05D31CE718A812B500012E97 /* mo_accel.mm in Sources */,
+				058C554B18A461A700C3E534 /* MomonicaViewController.mm in Sources */,
+				05D31CFF18A82D9100012E97 /* MomonicaRenderer.mm in Sources */,
+				05D31D0218A8469000012E97 /* MomonicaEntity.mm in Sources */,
+				05D31CEE18A8132D00012E97 /* MomonicaGlobals.mm in Sources */,
 				058C553A18A461A700C3E534 /* main.m in Sources */,
+				05D31CE918A812B500012E97 /* mo_gfx.mm in Sources */,
 				058C553E18A461A700C3E534 /* MomonicaAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +588,7 @@
 				058C556518A461A700C3E534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		058C556618A461A700C3E534 /* Build configuration list for PBXNativeTarget "MomonicaTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +597,7 @@
 				058C556818A461A700C3E534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
