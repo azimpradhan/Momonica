@@ -28,7 +28,7 @@ public:
     static UInt32 numFrames;
     
     // texture
-    static GLuint texture[2];
+    static GLuint texture[30];
     
     static const GLfloat squareVertices[8];
     static const GLfloat normals[12];    

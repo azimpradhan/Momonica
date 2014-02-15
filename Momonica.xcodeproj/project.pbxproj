@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0515CC6418AB16CA007FB245 /* holeA.png in Resources */ = {isa = PBXBuildFile; fileRef = 0515CC5D18AB16CA007FB245 /* holeA.png */; };
+		0515CC6518AB16CA007FB245 /* holeB.png in Resources */ = {isa = PBXBuildFile; fileRef = 0515CC5E18AB16CA007FB245 /* holeB.png */; };
+		0515CC6618AB16CA007FB245 /* holeC.png in Resources */ = {isa = PBXBuildFile; fileRef = 0515CC5F18AB16CA007FB245 /* holeC.png */; };
+		0515CC6718AB16CA007FB245 /* holeD.png in Resources */ = {isa = PBXBuildFile; fileRef = 0515CC6018AB16CA007FB245 /* holeD.png */; };
+		0515CC6818AB16CA007FB245 /* holeE.png in Resources */ = {isa = PBXBuildFile; fileRef = 0515CC6118AB16CA007FB245 /* holeE.png */; };
+		0515CC6918AB16CA007FB245 /* holeF.png in Resources */ = {isa = PBXBuildFile; fileRef = 0515CC6218AB16CA007FB245 /* holeF.png */; };
+		0515CC6A18AB16CA007FB245 /* holeG.png in Resources */ = {isa = PBXBuildFile; fileRef = 0515CC6318AB16CA007FB245 /* holeG.png */; };
+		0515CC6C18AC0F56007FB245 /* backgroundHoleBlurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 0515CC6B18AC0F56007FB245 /* backgroundHoleBlurred.png */; };
 		058C552A18A461A700C3E534 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552918A461A700C3E534 /* Foundation.framework */; };
 		058C552C18A461A700C3E534 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552B18A461A700C3E534 /* CoreGraphics.framework */; };
 		058C552E18A461A700C3E534 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552D18A461A700C3E534 /* UIKit.framework */; };
@@ -49,6 +57,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0515CC5D18AB16CA007FB245 /* holeA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holeA.png; sourceTree = "<group>"; };
+		0515CC5E18AB16CA007FB245 /* holeB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holeB.png; sourceTree = "<group>"; };
+		0515CC5F18AB16CA007FB245 /* holeC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holeC.png; sourceTree = "<group>"; };
+		0515CC6018AB16CA007FB245 /* holeD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holeD.png; sourceTree = "<group>"; };
+		0515CC6118AB16CA007FB245 /* holeE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holeE.png; sourceTree = "<group>"; };
+		0515CC6218AB16CA007FB245 /* holeF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holeF.png; sourceTree = "<group>"; };
+		0515CC6318AB16CA007FB245 /* holeG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holeG.png; sourceTree = "<group>"; };
+		0515CC6B18AC0F56007FB245 /* backgroundHoleBlurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundHoleBlurred.png; sourceTree = "<group>"; };
 		058C552618A461A700C3E534 /* Momonica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momonica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		058C552918A461A700C3E534 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		058C552B18A461A700C3E534 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -248,6 +264,14 @@
 		05D31CF118A8272700012E97 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				0515CC6B18AC0F56007FB245 /* backgroundHoleBlurred.png */,
+				0515CC5D18AB16CA007FB245 /* holeA.png */,
+				0515CC5E18AB16CA007FB245 /* holeB.png */,
+				0515CC5F18AB16CA007FB245 /* holeC.png */,
+				0515CC6018AB16CA007FB245 /* holeD.png */,
+				0515CC6118AB16CA007FB245 /* holeE.png */,
+				0515CC6218AB16CA007FB245 /* holeF.png */,
+				0515CC6318AB16CA007FB245 /* holeG.png */,
 				05D31CF218A8272700012E97 /* Projectile.png */,
 				05D31CF318A8272700012E97 /* SlingEnd.png */,
 				05D31CF418A8272700012E97 /* stanford.png */,
@@ -334,8 +358,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0515CC6918AB16CA007FB245 /* holeF.png in Resources */,
+				0515CC6818AB16CA007FB245 /* holeE.png in Resources */,
 				058C554418A461A700C3E534 /* Main_iPad.storyboard in Resources */,
+				0515CC6418AB16CA007FB245 /* holeA.png in Resources */,
+				0515CC6C18AC0F56007FB245 /* backgroundHoleBlurred.png in Resources */,
+				0515CC6518AB16CA007FB245 /* holeB.png in Resources */,
 				05D31CF718A8272700012E97 /* SlingEnd.png in Resources */,
+				0515CC6718AB16CA007FB245 /* holeD.png in Resources */,
+				0515CC6A18AB16CA007FB245 /* holeG.png in Resources */,
+				0515CC6618AB16CA007FB245 /* holeC.png in Resources */,
 				058C554118A461A700C3E534 /* Main_iPhone.storyboard in Resources */,
 				05D31CF618A8272700012E97 /* Projectile.png in Resources */,
 				05D31CF818A8272700012E97 /* stanford.png in Resources */,

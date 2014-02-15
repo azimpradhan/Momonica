@@ -17,6 +17,8 @@
 using namespace std;
 std::vector<Entity *> g_entities;
 void renderEntities();
+void renderHoles(GLfloat total_width);
+void renderBottomPannel();
 
 
 
@@ -151,6 +153,35 @@ void touch_callback( NSSet * touches, UIView * view,
     }
 }
 
+void addMomonicaHoles(){
+    GLfloat ratio = MomonicaGlobals::gfxWidth / MomonicaGlobals::gfxHeight;
+    GLfloat width = (ratio*2.0)/10.0;
+    GLfloat space_factor = 0.05;
+
+
+    for (int i = 0; i < 10; i ++){
+        
+    
+        Entity * e = new MomonicaHole(MomonicaGlobals::texture[i+1], MomonicaGlobals::texture[8]);
+        // check
+        if( e != NULL )
+        {
+            // append
+            g_entities.push_back( e );
+            // active
+            e->active = true;
+            // reset transparency
+            e->alpha = 1.0;
+            // set location
+            e->loc.set( -ratio + width*i + space_factor*3, -0.75, 0 );
+            // set color
+            e->col.set( .5, 1, .5 );
+            // set scale
+            e->sca.set( width - space_factor, .5, 1 );
+        }
+    }
+}
+
 
 // initialize the engine (audio, grx, interaction)
 void MomonicaInit()
@@ -159,7 +190,7 @@ void MomonicaInit()
     
     
     // generate texture name
-    glGenTextures( 2, &MomonicaGlobals::texture[0] );
+    glGenTextures( 30, &MomonicaGlobals::texture[0] );
     // bind the texture
     glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[0] );
     // setting parameters
@@ -169,13 +200,77 @@ void MomonicaInit()
     MoGfx::loadTexture( @"SlingEnd", @"png" );
     
     
+//    // bind the texture
+//    glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[1] );
+//    // setting parameters
+//    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+//    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+//    // load the texture
+//    MoGfx::loadTexture( @"Projectile", @"png" );
+    
     // bind the texture
     glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[1] );
     // setting parameters
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
     // load the texture
-    MoGfx::loadTexture( @"Projectile", @"png" );
+    MoGfx::loadTexture( @"holeA", @"png" );
+    
+    // bind the texture
+    glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[2] );
+    // setting parameters
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    // load the texture
+    MoGfx::loadTexture( @"holeB", @"png" );
+
+    // bind the texture
+    glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[3] );
+    // setting parameters
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    // load the texture
+    MoGfx::loadTexture( @"holeC", @"png" );
+    
+    // bind the texture
+    glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[4] );
+    // setting parameters
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    // load the texture
+    MoGfx::loadTexture( @"holeD", @"png" );
+    
+    // bind the texture
+    glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[5] );
+    // setting parameters
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    // load the texture
+    MoGfx::loadTexture( @"holeE", @"png" );
+    
+    // bind the texture
+    glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[6] );
+    // setting parameters
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    // load the texture
+    MoGfx::loadTexture( @"holeF", @"png" );
+    
+    // bind the texture
+    glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[7] );
+    // setting parameters
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    // load the texture
+    MoGfx::loadTexture( @"holeG", @"png" );
+    
+    // bind the texture
+    glBindTexture( GL_TEXTURE_2D, MomonicaGlobals::texture[8] );
+    // setting parameters
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    // load the texture
+    MoGfx::loadTexture( @"backgroundHoleBlurred", @"png" );
     
     
     static bool initialized = NO;
@@ -194,6 +289,8 @@ void MomonicaInit()
         //g_mandolin->setFrequency(440.0);
         MoAccel::addCallback(accelCallback, NULL);
         MoAccel::setUpdateInterval(0.0);
+        
+        addMomonicaHoles();
         
         // init
         bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
@@ -239,9 +336,8 @@ void MomonicaRender()
     glLoadIdentity();
     // alternate
     GLfloat ratio = MomonicaGlobals::gfxWidth / MomonicaGlobals::gfxHeight;
-    glOrthof( -ratio, ratio, -1, 1, -1, 1 );
     // orthographic
-    // glOrthof( -g_gfxWidth/2, g_gfxWidth/2, -g_gfxHeight/2, g_gfxHeight/2, -1.0f, 1.0f );
+    glOrthof( -ratio, ratio, -1, 1, -1, 1 );
     // modelview
     glMatrixMode( GL_MODELVIEW );
     // reset
@@ -256,7 +352,7 @@ void MomonicaRender()
     // entities
     renderEntities();
     
-    
+    //renderBottomPannel();
     
     // waveform
     //renderWaveform();
@@ -311,3 +407,43 @@ void renderEntities(){
         
     }
 }
+
+//void renderBox(){
+//    
+//    Entity *e = new TextureObject(2);
+//    
+//    glColor4f( 0.2, 0.0, 1.0, 1.0 );
+//
+//    e->render();
+//    
+//    
+//    
+//}
+//void renderBottomPannel(){
+//    GLfloat ratio = MomonicaGlobals::gfxWidth / MomonicaGlobals::gfxHeight;
+//    glPushMatrix();
+//    glTranslatef( -ratio, -0.75, 0 );
+//    renderHoles(ratio*2);
+//    glPopMatrix();
+//
+//    
+//}
+//
+//void renderHoles(GLfloat total_width){
+//    GLfloat width = total_width/10.0;
+//    GLfloat space_factor = 0.05;
+//
+//
+//    glTranslatef(width*0.5, 0.0, 0.0);
+//    //glTranslatef( space_factor * 0.5, 0, 0 );
+//
+//    
+//    for (int i = 0; i < 10; i ++){
+//        glPushMatrix();
+//        glScalef(width - space_factor, 0.5, 1.0);
+//        renderBox();
+//        glPopMatrix();
+//        glTranslatef( width, 0, 0 );
+//    }
+//
+//}

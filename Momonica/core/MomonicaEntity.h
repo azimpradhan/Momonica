@@ -44,12 +44,31 @@ public:
     GLuint m_texture;
 };
 
+class MomonicaHole : public Entity{
+    
+public:
+    MomonicaHole(GLuint primaryTexture, GLuint backgroundTexture);
+    
+    virtual void render();
+    virtual void update( double dt);
+    
+    void changePrimaryTexture(GLuint newTexture);
+    void touchHole();
+    void releaseHole();
+    
+public:
+    GLuint m_primary_texture;
+    GLuint m_background_texture;
+    Vector3D m_background_scale;
+    BOOL m_touched;
+};
 class TouchObject : public TextureObject{
     
 public:
     TouchObject(GLuint texture, BOOL pulsating);
     // update
     virtual void update( double dt );
+    
     
 public:
     UITouch *touchEvent;

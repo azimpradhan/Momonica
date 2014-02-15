@@ -83,3 +83,65 @@ void TouchObject::update(double dt){
     }
 
 }
+MomonicaHole::MomonicaHole(GLuint primaryTexture, GLuint backgroundTexture){
+    m_primary_texture = primaryTexture;
+    m_background_texture = backgroundTexture;
+    m_touched = NO;
+}
+void MomonicaHole::changePrimaryTexture(GLuint newTexture){
+    m_primary_texture = newTexture;
+}
+
+void MomonicaHole::touchHole(){
+    m_touched = YES;
+}
+void MomonicaHole::releaseHole(){
+    m_touched = NO;
+}
+void MomonicaHole::render(){
+    // enable texture mapping
+    glEnable( GL_TEXTURE_2D );
+    // enable blending
+    glEnable( GL_BLEND );
+    // set blend func
+    glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+    // glBlendFunc( GL_ONE, GL_ONE );
+    
+    // bind the texture
+    
+    // vertex
+    glVertexPointer( 2, GL_FLOAT, 0, MomonicaGlobals::squareVertices );
+    glEnableClientState(GL_VERTEX_ARRAY );
+    
+    // texture coordinate
+    glTexCoordPointer( 2, GL_FLOAT, 0, MomonicaGlobals::texCoords );
+    glEnableClientState( GL_TEXTURE_COORD_ARRAY );
+    
+    glColor4f( 1.0, 1.0, 1.0, 0.75 );
+
+    glBindTexture( GL_TEXTURE_2D, m_background_texture );
+
+    // triangle strip
+    glDrawArrays( GL_TRIANGLE_STRIP, 0, 4 );
+    
+    glColor4f( this->col.x, this->col.y, this->col.z, this->alpha );
+
+    
+    glBindTexture( GL_TEXTURE_2D, m_primary_texture );
+    
+    // triangle strip
+    glDrawArrays( GL_TRIANGLE_STRIP, 0, 4 );
+    
+    // disable blend
+    glDisable( GL_BLEND );
+    glDisable( GL_TEXTURE_2D );
+
+    
+    
+    
+}
+void MomonicaHole::update( double dt){
+
+
+
+}
