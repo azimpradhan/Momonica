@@ -39,4 +39,11 @@ SAMPLE MomonicaGlobals::vertices[];
 UInt32 MomonicaGlobals::numFrames;
 GLuint MomonicaGlobals::texture[];
 
+HoleInfo MomonicaGlobals::regular_holes;
+HoleInfo MomonicaGlobals::draw_holes;
+
+
+
+
+
 

@@ -55,12 +55,14 @@ public:
     void changePrimaryTexture(GLuint newTexture);
     void touchHole();
     void releaseHole();
+    BOOL isWithinBounds(Vector3D point);
     
 public:
     GLuint m_primary_texture;
     GLuint m_background_texture;
-    Vector3D m_background_scale;
+    Vector3D m_background_color;
     BOOL m_touched;
+    GLfloat m_background_alpha;
 };
 class TouchObject : public TextureObject{
     
@@ -76,6 +78,15 @@ public:
     BOOL m_increasing;
     BOOL m_pulsating;
     
+    
+};
+
+class InvisibleTouch : public TouchObject{
+    
+public:
+    InvisibleTouch();
+    virtual void render();
+public:
     
 };
 

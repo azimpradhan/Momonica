@@ -15,6 +15,11 @@
 #define FRAMESIZE 512
 #define NUM_CHANNELS 2
 
+struct HoleInfo{
+    int text_indices[10];
+    
+};
+
 class MomonicaGlobals{
 public:
     static GLfloat gfxWidth;
@@ -33,5 +38,10 @@ public:
     static const GLfloat squareVertices[8];
     static const GLfloat normals[12];    
     static const GLfloat texCoords[8];
+    
+    static struct HoleInfo regular_holes;
+    static struct HoleInfo draw_holes;
+    
+    
 };
 #endif /* defined(__Momonica__MomonicaGlobals__) */

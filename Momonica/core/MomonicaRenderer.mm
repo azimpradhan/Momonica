@@ -16,6 +16,9 @@
 
 using namespace std;
 std::vector<Entity *> g_entities;
+MomonicaHole *g_momonica_holes[10];
+InvisibleTouch *g_lip_touch = NULL;
+TextureObject *g_current_hole = NULL;
 void renderEntities();
 void renderHoles(GLfloat total_width);
 void renderBottomPannel();
@@ -100,12 +103,13 @@ void touch_callback( NSSet * touches, UIView * view,
             {
                 NSLog( @"touch began... %f %f", pt.x, pt.y );
                 
-                Entity * e = new TouchObject(MomonicaGlobals::texture[0], YES);
+                
+                Entity *e = new InvisibleTouch();
+                //Entity * e = new TouchObject(MomonicaGlobals::texture[0], YES);
                 // check
                 if( e != NULL )
                 {
                     // append
-                    g_entities.push_back( e );
                     // active
                     e->active = true;
                     // reset transparency
@@ -118,6 +122,15 @@ void touch_callback( NSSet * touches, UIView * view,
                     e->sca.setAll( .65 );
                     ((TouchObject *)e)->touchEvent = touch;
                     ((TouchObject *)e)->view = view;
+                    
+                    CGPoint pt = [touch locationInView:view];
+                    GLfloat y = (pt.x / MomonicaGlobals::gfxHeight * 2 ) - 1;
+                    //check that within lip range)
+                    if (!g_lip_touch && y <= -0.5){
+                        g_lip_touch = (InvisibleTouch *)e;
+                        g_entities.push_back( e );
+                    }
+
                 }
                 
                 
@@ -162,12 +175,13 @@ void addMomonicaHoles(){
     for (int i = 0; i < 10; i ++){
         
     
-        Entity * e = new MomonicaHole(MomonicaGlobals::texture[i+1], MomonicaGlobals::texture[8]);
+        Entity * e = new MomonicaHole(MomonicaGlobals::texture[MomonicaGlobals::regular_holes.text_indices[i]], MomonicaGlobals::texture[8]);
         // check
         if( e != NULL )
         {
             // append
             g_entities.push_back( e );
+            g_momonica_holes[i] = (MomonicaHole *)e;
             // active
             e->active = true;
             // reset transparency
@@ -176,10 +190,33 @@ void addMomonicaHoles(){
             e->loc.set( -ratio + width*i + space_factor*3, -0.75, 0 );
             // set color
             e->col.set( .5, 1, .5 );
+            ((MomonicaHole *)e)->m_background_color.set(1,1,1);
             // set scale
             e->sca.set( width - space_factor, .5, 1 );
         }
     }
+    
+    
+    Entity * e = new TextureObject(MomonicaGlobals::texture[1]);
+    // check
+    if( e != NULL )
+    {
+        // append
+        g_entities.push_back( e );
+        g_current_hole = (TextureObject *)e;
+        // active
+        e->active = true;
+        // reset transparency
+        e->alpha = 0.0;
+        // set location
+        e->loc.set( 0, 0.5, 0 );
+        // set color
+        e->col.set( .5, 1, .5 );
+        // set scale
+        e->sca.set(1, 0.5, 1 );
+    }
+    
+    
 }
 
 
@@ -187,6 +224,30 @@ void addMomonicaHoles(){
 void MomonicaInit()
 {
     //NSLog( @"init..." );
+    
+    MomonicaGlobals::regular_holes.text_indices[0] = 3;
+    MomonicaGlobals::regular_holes.text_indices[1] = 5;
+    MomonicaGlobals::regular_holes.text_indices[2] = 7;
+    MomonicaGlobals::regular_holes.text_indices[3] = 3;
+    MomonicaGlobals::regular_holes.text_indices[4] = 5;
+    MomonicaGlobals::regular_holes.text_indices[5] = 7;
+    MomonicaGlobals::regular_holes.text_indices[6] = 3;
+    MomonicaGlobals::regular_holes.text_indices[7] = 5;
+    MomonicaGlobals::regular_holes.text_indices[8] = 7;
+    MomonicaGlobals::regular_holes.text_indices[9] = 3;
+
+    
+    MomonicaGlobals::draw_holes.text_indices[0] = 4;
+    MomonicaGlobals::draw_holes.text_indices[1] = 7;
+    MomonicaGlobals::draw_holes.text_indices[2] = 2;
+    MomonicaGlobals::draw_holes.text_indices[3] = 4;
+    MomonicaGlobals::draw_holes.text_indices[4] = 6;
+    MomonicaGlobals::draw_holes.text_indices[5] = 1;
+    MomonicaGlobals::draw_holes.text_indices[6] = 2;
+    MomonicaGlobals::draw_holes.text_indices[7] = 4;
+    MomonicaGlobals::draw_holes.text_indices[8] = 6;
+    MomonicaGlobals::draw_holes.text_indices[9] = 1;
+    
     
     
     // generate texture name
@@ -324,6 +385,42 @@ void MomonicaSetDims( GLfloat width, GLfloat height )
     MomonicaGlobals::waveformWidth = width / height * 1.9;
 }
 
+
+
+void readMyLips(){
+    if (g_lip_touch != NULL){
+        
+        for (int i = 0; i < 10; i++){
+            if (g_momonica_holes[i]->isWithinBounds(g_lip_touch->loc)){
+                NSLog(@"arrived at index %d", i);
+                g_momonica_holes[i]->touchHole();
+                g_current_hole->m_texture = g_momonica_holes[i]->m_primary_texture;
+                g_current_hole->alpha = 1.0;
+                //turn the synth on
+                //update visuals of the
+            }
+            else{
+                //turn the synth off
+                NSLog(@"left index %d", i);
+                g_momonica_holes[i]->releaseHole();
+                //update visuals
+
+                
+            }
+        }
+        
+        //NSLog(@"I will do my job here.");
+        //NSLog(@"height boundary is %f", g_momonica_holes[0]->loc.y + 0.5*g_momonica_holes[0]->sca.y);
+    }
+    else{
+        g_current_hole->alpha = 0.0;
+        for (int i = 0; i < 10; i++){
+            g_momonica_holes[i]->releaseHole();
+        }
+        
+    }
+}
+
 // draw next frame of graphics
 void MomonicaRender()
 {
@@ -352,7 +449,8 @@ void MomonicaRender()
     // entities
     renderEntities();
     
-    //renderBottomPannel();
+    readMyLips();
+    
     
     // waveform
     //renderWaveform();
@@ -377,6 +475,7 @@ void renderEntities(){
             // delete
             delete (*e);
             e = g_entities.erase( e );
+            g_lip_touch = NULL;
         }
         else{
             (*e)->update( MoGfx::delta() );
@@ -408,42 +507,3 @@ void renderEntities(){
     }
 }
 
-//void renderBox(){
-//    
-//    Entity *e = new TextureObject(2);
-//    
-//    glColor4f( 0.2, 0.0, 1.0, 1.0 );
-//
-//    e->render();
-//    
-//    
-//    
-//}
-//void renderBottomPannel(){
-//    GLfloat ratio = MomonicaGlobals::gfxWidth / MomonicaGlobals::gfxHeight;
-//    glPushMatrix();
-//    glTranslatef( -ratio, -0.75, 0 );
-//    renderHoles(ratio*2);
-//    glPopMatrix();
-//
-//    
-//}
-//
-//void renderHoles(GLfloat total_width){
-//    GLfloat width = total_width/10.0;
-//    GLfloat space_factor = 0.05;
-//
-//
-//    glTranslatef(width*0.5, 0.0, 0.0);
-//    //glTranslatef( space_factor * 0.5, 0, 0 );
-//
-//    
-//    for (int i = 0; i < 10; i ++){
-//        glPushMatrix();
-//        glScalef(width - space_factor, 0.5, 1.0);
-//        renderBox();
-//        glPopMatrix();
-//        glTranslatef( width, 0, 0 );
-//    }
-//
-//}
