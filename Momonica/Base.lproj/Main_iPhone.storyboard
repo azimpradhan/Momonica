@@ -22,6 +22,10 @@
                                 <state key="normal" backgroundImage="chordButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="chordModeOff:" destination="LVB-YS-i5n" eventType="touchUpInside" id="NzX-JC-aLP"/>
+                                    <action selector="chordModeOn:" destination="LVB-YS-i5n" eventType="touchDown" id="0Kd-It-67r"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydw-Ny-PtZ">
                                 <rect key="frame" x="20" y="20" width="110" height="110"/>
@@ -29,6 +33,10 @@
                                 <state key="normal" backgroundImage="drawButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="drawHeld:" destination="LVB-YS-i5n" eventType="touchDown" id="IsQ-1r-TxU"/>
+                                    <action selector="drawReleased:" destination="LVB-YS-i5n" eventType="touchUpInside" id="XuR-ax-pH8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

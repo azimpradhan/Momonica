@@ -89,6 +89,7 @@ MomonicaHole::MomonicaHole(GLuint primaryTexture, GLuint backgroundTexture){
     m_background_texture = backgroundTexture;
     m_touched = NO;
     m_background_alpha = 0.0;
+    m_chords = NO;
 }
 void MomonicaHole::changePrimaryTexture(GLuint newTexture){
     m_primary_texture = newTexture;

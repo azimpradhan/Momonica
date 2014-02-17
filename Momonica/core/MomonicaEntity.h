@@ -63,6 +63,8 @@ public:
     Vector3D m_background_color;
     BOOL m_touched;
     GLfloat m_background_alpha;
+    int m_index;
+    BOOL m_chords;
 };
 class TouchObject : public TextureObject{
     

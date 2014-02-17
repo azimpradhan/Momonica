@@ -13,6 +13,8 @@
 
 
 @interface MomonicaViewController () {
+    
+    
 }
 @property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) GLKBaseEffect *effect;
@@ -100,6 +102,23 @@
     //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     //call render here
     MomonicaRender();
+}
+- (IBAction)drawHeld:(id)sender {
+    changeToDrawMode();
+}
+
+- (IBAction)drawReleased:(id)sender {
+    changeToBlowMode();
+
+}
+- (IBAction)chordModeOn:(id)sender {
+    changeToChordMode();
+
+}
+
+- (IBAction)chordModeOff:(id)sender {
+    changeToSingleMode();
+
 }
 
 #pragma mark -  OpenGL ES 2 shader compilation

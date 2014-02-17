@@ -166,6 +166,39 @@ void touch_callback( NSSet * touches, UIView * view,
     }
 }
 
+void changeToDrawMode(){
+    NSLog(@"draw is held.");
+    for (int i = 0; i < 10; i ++){
+        g_momonica_holes[i]->changePrimaryTexture(MomonicaGlobals::texture[MomonicaGlobals::draw_holes.text_indices[i]]);
+    }
+    
+  
+}
+
+void changeToBlowMode(){
+    NSLog(@"change to blow mode.");
+    for (int i = 0; i < 10; i ++){
+        g_momonica_holes[i]->changePrimaryTexture(MomonicaGlobals::texture[MomonicaGlobals::regular_holes.text_indices[i]]);
+    }
+
+}
+
+void changeToChordMode(){
+    NSLog(@"chord mode is ON");
+    for (int i = 0; i < 10; i ++){
+        g_momonica_holes[i]->m_chords = YES;
+    }
+
+    
+}
+
+void changeToSingleMode(){
+    NSLog(@"chord mode is OFF");
+    for (int i = 0; i < 10; i ++){
+        g_momonica_holes[i]->m_chords = NO;
+    }
+}
+
 void addMomonicaHoles(){
     GLfloat ratio = MomonicaGlobals::gfxWidth / MomonicaGlobals::gfxHeight;
     GLfloat width = (ratio*2.0)/10.0;
@@ -182,6 +215,8 @@ void addMomonicaHoles(){
             // append
             g_entities.push_back( e );
             g_momonica_holes[i] = (MomonicaHole *)e;
+            
+            ((MomonicaHole *)e)->m_index = i;
             // active
             e->active = true;
             // reset transparency

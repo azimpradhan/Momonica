@@ -17,4 +17,13 @@ void MomonicaSetDims( GLfloat width, GLfloat height );
 // draw next frame of graphics
 void MomonicaRender();
 
+
+void changeToDrawMode();
+
+void changeToBlowMode();
+
+void changeToChordMode();
+
+void changeToSingleMode();
+
 #endif /* defined(__Momonica__MomonicaRenderer__) */
