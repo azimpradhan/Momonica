@@ -9,6 +9,7 @@
 #ifndef __Momonica__MomonicaEntity__
 #define __Momonica__MomonicaEntity__
 #import "mo_gfx.h"
+#import "Instrmnt.h"
 
 class Entity
 {
@@ -56,6 +57,10 @@ public:
     void touchHole();
     void releaseHole();
     BOOL isWithinBounds(Vector3D point);
+    void setFrequeny(GLfloat newFrequency);
+protected:
+    void startPlayingHole();
+    
     
 public:
     GLuint m_primary_texture;
@@ -65,6 +70,10 @@ public:
     GLfloat m_background_alpha;
     int m_index;
     BOOL m_chords;
+    GLfloat m_frequency;
+    stk::Instrmnt *m_main_voice;
+    stk::Instrmnt *m_high_voice;
+    stk::Instrmnt *m_low_voice;
 };
 class TouchObject : public TextureObject{
     

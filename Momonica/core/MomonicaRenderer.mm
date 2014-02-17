@@ -13,10 +13,12 @@
 #import "mo_accel.h"
 #import "MomonicaGlobals.h"
 #import "MomonicaEntity.h"
+#import "Clarinet.h"
+#import "Saxofony.h"
 
 using namespace std;
 std::vector<Entity *> g_entities;
-MomonicaHole *g_momonica_holes[10];
+//MomonicaHole *g_momonica_holes[10];
 InvisibleTouch *g_lip_touch = NULL;
 TextureObject *g_current_hole = NULL;
 void renderEntities();
@@ -59,8 +61,10 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
         // set the y coordinate (with scaling)
         MomonicaGlobals::vertices[2*i+1] = buffer[2*i] * 2;
         // zero
-        buffer[2*i] = buffer[2*i+1] = 0;
-        //buffer[2*i] = buffer[2*i+1] =  g_mandolin->tick() + g_colliding_sound->tick() * 0.5 + g_wall_sound->tick() ;
+        //buffer[2*i] = buffer[2*i+1] = 0;
+        buffer[2*i] = buffer[2*i+1] =  MomonicaGlobals::main_sax->tick() + MomonicaGlobals::high_sax->tick() + MomonicaGlobals::low_sax->tick();
+
+        //buffer[2*i] = buffer[2*i+1] =  MomonicaGlobals::main_clarinet->tick() + MomonicaGlobals::high_clarinet->tick() + MomonicaGlobals::low_clarinet->tick();
     }
     
     // save the num frames
@@ -169,7 +173,11 @@ void touch_callback( NSSet * touches, UIView * view,
 void changeToDrawMode(){
     NSLog(@"draw is held.");
     for (int i = 0; i < 10; i ++){
-        g_momonica_holes[i]->changePrimaryTexture(MomonicaGlobals::texture[MomonicaGlobals::draw_holes.text_indices[i]]);
+//        g_momonica_holes[i]->changePrimaryTexture(MomonicaGlobals::texture[MomonicaGlobals::draw_holes.text_indices[i]]);
+//        g_momonica_holes[i]->setFrequeny(MomonicaGlobals::draw_holes.frequencies[i]);
+        MomonicaGlobals::momonica_holes[i]->changePrimaryTexture(MomonicaGlobals::texture[MomonicaGlobals::draw_holes.text_indices[i]]);
+        MomonicaGlobals::momonica_holes[i]->setFrequeny(MomonicaGlobals::draw_holes.frequencies[i]);
+
     }
     
   
@@ -178,7 +186,10 @@ void changeToDrawMode(){
 void changeToBlowMode(){
     NSLog(@"change to blow mode.");
     for (int i = 0; i < 10; i ++){
-        g_momonica_holes[i]->changePrimaryTexture(MomonicaGlobals::texture[MomonicaGlobals::regular_holes.text_indices[i]]);
+//        g_momonica_holes[i]->changePrimaryTexture(MomonicaGlobals::texture[MomonicaGlobals::regular_holes.text_indices[i]]);
+//        g_momonica_holes[i]->setFrequeny(MomonicaGlobals::regular_holes.frequencies[i]);
+        MomonicaGlobals::momonica_holes[i]->changePrimaryTexture(MomonicaGlobals::texture[MomonicaGlobals::regular_holes.text_indices[i]]);
+        MomonicaGlobals::momonica_holes[i]->setFrequeny(MomonicaGlobals::regular_holes.frequencies[i]);
     }
 
 }
@@ -186,16 +197,20 @@ void changeToBlowMode(){
 void changeToChordMode(){
     NSLog(@"chord mode is ON");
     for (int i = 0; i < 10; i ++){
-        g_momonica_holes[i]->m_chords = YES;
+        MomonicaGlobals::momonica_holes[i]->m_chords = YES;
+//        g_momonica_holes[i]->m_chords = YES;
     }
 
     
 }
 
 void changeToSingleMode(){
+
+    
     NSLog(@"chord mode is OFF");
     for (int i = 0; i < 10; i ++){
-        g_momonica_holes[i]->m_chords = NO;
+        MomonicaGlobals::momonica_holes[i]->m_chords = NO;
+//        g_momonica_holes[i]->m_chords = NO;
     }
 }
 
@@ -209,14 +224,21 @@ void addMomonicaHoles(){
         
     
         Entity * e = new MomonicaHole(MomonicaGlobals::texture[MomonicaGlobals::regular_holes.text_indices[i]], MomonicaGlobals::texture[8]);
+        
+        ((MomonicaHole *)e)->setFrequeny(MomonicaGlobals::regular_holes.frequencies[i]);
         // check
         if( e != NULL )
         {
             // append
             g_entities.push_back( e );
-            g_momonica_holes[i] = (MomonicaHole *)e;
+            MomonicaGlobals::momonica_holes[i] = (MomonicaHole *)e;
+
+//            g_momonica_holes[i] = (MomonicaHole *)e;
             
             ((MomonicaHole *)e)->m_index = i;
+            ((MomonicaHole *)e)->m_main_voice = MomonicaGlobals::main_sax;
+            ((MomonicaHole *)e)->m_high_voice = MomonicaGlobals::high_sax;
+            ((MomonicaHole *)e)->m_low_voice = MomonicaGlobals::low_sax;
             // active
             e->active = true;
             // reset transparency
@@ -231,6 +253,8 @@ void addMomonicaHoles(){
         }
     }
     
+    
+    //display note object in the middle of the two buttons
     
     Entity * e = new TextureObject(MomonicaGlobals::texture[1]);
     // check
@@ -270,6 +294,17 @@ void MomonicaInit()
     MomonicaGlobals::regular_holes.text_indices[7] = 5;
     MomonicaGlobals::regular_holes.text_indices[8] = 7;
     MomonicaGlobals::regular_holes.text_indices[9] = 3;
+    
+    MomonicaGlobals::regular_holes.frequencies[0] = 261.63;
+    MomonicaGlobals::regular_holes.frequencies[1] = 329.63;
+    MomonicaGlobals::regular_holes.frequencies[2] = 392.00;
+    MomonicaGlobals::regular_holes.frequencies[3] = 523.25;
+    MomonicaGlobals::regular_holes.frequencies[4] = 659.25;
+    MomonicaGlobals::regular_holes.frequencies[5] = 783.99;
+    MomonicaGlobals::regular_holes.frequencies[6] = 1046.50;
+    MomonicaGlobals::regular_holes.frequencies[7] = 1318.51;
+    MomonicaGlobals::regular_holes.frequencies[8] = 1567.98;
+    MomonicaGlobals::regular_holes.frequencies[9] = 2093.00;
 
     
     MomonicaGlobals::draw_holes.text_indices[0] = 4;
@@ -283,6 +318,16 @@ void MomonicaInit()
     MomonicaGlobals::draw_holes.text_indices[8] = 6;
     MomonicaGlobals::draw_holes.text_indices[9] = 1;
     
+    MomonicaGlobals::draw_holes.frequencies[0] = 293.66;
+    MomonicaGlobals::draw_holes.frequencies[1] = 392.00;
+    MomonicaGlobals::draw_holes.frequencies[2] = 493.88;
+    MomonicaGlobals::draw_holes.frequencies[3] = 587.33;
+    MomonicaGlobals::draw_holes.frequencies[4] = 698.46;
+    MomonicaGlobals::draw_holes.frequencies[5] = 880.00;
+    MomonicaGlobals::draw_holes.frequencies[6] = 987.77;
+    MomonicaGlobals::draw_holes.frequencies[7] = 1174.66;
+    MomonicaGlobals::draw_holes.frequencies[8] = 1396.91;
+    MomonicaGlobals::draw_holes.frequencies[9] = 1760.00;
     
     
     // generate texture name
@@ -376,6 +421,20 @@ void MomonicaInit()
         // set touch callback
         MoTouch::addCallback( touch_callback, NULL );
         
+        MomonicaGlobals::main_clarinet = new stk::Clarinet(8.0);
+        MomonicaGlobals::high_clarinet = new stk::Clarinet(8.0);
+        MomonicaGlobals::low_clarinet = new stk::Clarinet(8.0);
+        
+        MomonicaGlobals::main_sax = new stk::Saxofony(8.0);
+        MomonicaGlobals::high_sax = new stk::Saxofony(8.0);
+        MomonicaGlobals::low_sax = new stk::Saxofony(8.0);
+        
+        MomonicaGlobals::main_sax->setBlowPosition(0.458);
+        MomonicaGlobals::high_sax->setBlowPosition(0.5);
+        MomonicaGlobals::low_sax->setBlowPosition(0.5);
+
+
+        
         //        g_mandolin = new stk::Mandolin(440.0);
         //        g_colliding_sound = new stk::Shakers();
         //        g_colliding_sound->controlChange(20, 56.0);
@@ -426,10 +485,16 @@ void readMyLips(){
     if (g_lip_touch != NULL){
         
         for (int i = 0; i < 10; i++){
-            if (g_momonica_holes[i]->isWithinBounds(g_lip_touch->loc)){
+//            if (g_momonica_holes[i]->isWithinBounds(g_lip_touch->loc)){
+            if (MomonicaGlobals::momonica_holes[i]->isWithinBounds(g_lip_touch->loc)){
+
                 NSLog(@"arrived at index %d", i);
-                g_momonica_holes[i]->touchHole();
-                g_current_hole->m_texture = g_momonica_holes[i]->m_primary_texture;
+                MomonicaGlobals::momonica_holes[i]->touchHole();
+
+//                g_momonica_holes[i]->touchHole();
+                g_current_hole->m_texture = MomonicaGlobals::momonica_holes[i]->m_primary_texture;
+
+//                g_current_hole->m_texture = g_momonica_holes[i]->m_primary_texture;
                 g_current_hole->alpha = 1.0;
                 //turn the synth on
                 //update visuals of the
@@ -437,7 +502,9 @@ void readMyLips(){
             else{
                 //turn the synth off
                 NSLog(@"left index %d", i);
-                g_momonica_holes[i]->releaseHole();
+                MomonicaGlobals::momonica_holes[i]->releaseHole();
+
+//                g_momonica_holes[i]->releaseHole();
                 //update visuals
 
                 
@@ -448,9 +515,19 @@ void readMyLips(){
         //NSLog(@"height boundary is %f", g_momonica_holes[0]->loc.y + 0.5*g_momonica_holes[0]->sca.y);
     }
     else{
+        MomonicaGlobals::main_clarinet->noteOff(1.0);
+        MomonicaGlobals::high_clarinet->noteOff(1.0);
+        MomonicaGlobals::low_clarinet->noteOff(1.0);
+        
+        MomonicaGlobals::main_sax->noteOff(1.0);
+        MomonicaGlobals::high_sax->noteOff(1.0);
+        MomonicaGlobals::low_sax->noteOff(1.0);
+        
         g_current_hole->alpha = 0.0;
         for (int i = 0; i < 10; i++){
-            g_momonica_holes[i]->releaseHole();
+            MomonicaGlobals::momonica_holes[i]->releaseHole();
+
+//            g_momonica_holes[i]->releaseHole();
         }
         
     }

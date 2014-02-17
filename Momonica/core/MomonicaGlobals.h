@@ -9,6 +9,10 @@
 #ifndef __Momonica__MomonicaGlobals__
 #define __Momonica__MomonicaGlobals__
 #import "mo_def.h"
+#import "Clarinet.h"
+#import "Saxofony.h"
+#import "MomonicaEntity.h"
+
 
 
 #define SRATE 24000
@@ -17,6 +21,7 @@
 
 struct HoleInfo{
     int text_indices[10];
+    GLfloat frequencies[10];
     
 };
 
@@ -42,6 +47,17 @@ public:
     static struct HoleInfo regular_holes;
     static struct HoleInfo draw_holes;
     
+    static stk::Clarinet *main_clarinet;
+    static stk::Clarinet *high_clarinet;
+    static stk::Clarinet *low_clarinet;
+    
+    static stk::Saxofony *main_sax;
+    static stk::Saxofony *high_sax;
+    static stk::Saxofony *low_sax;
+  
+    
+    
+    static MomonicaHole * momonica_holes[10];
     
 };
 #endif /* defined(__Momonica__MomonicaGlobals__) */

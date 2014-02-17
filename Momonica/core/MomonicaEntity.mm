@@ -97,10 +97,45 @@ void MomonicaHole::changePrimaryTexture(GLuint newTexture){
 
 void MomonicaHole::touchHole(){
     m_touched = YES;
+    this->startPlayingHole();
+    
 }
 void MomonicaHole::releaseHole(){
     m_touched = NO;
 }
+void MomonicaHole::setFrequeny(GLfloat newFrequency){
+    m_frequency = newFrequency;
+}
+void MomonicaHole::startPlayingHole(){
+    this->m_main_voice->noteOn(m_frequency, 1.0);
+    if (m_chords){
+        if (this->m_index == 0){
+            GLfloat upper_freq = MomonicaGlobals::momonica_holes[this->m_index + 1]->m_frequency;
+            this->m_high_voice->noteOn(upper_freq, 0.5);
+            
+        }
+        else if (this->m_index == 9){
+            GLfloat lower_freq = MomonicaGlobals::momonica_holes[this->m_index - 1]->m_frequency;
+            this->m_low_voice->noteOn(lower_freq, 0.5);
+
+            
+        }
+        else{
+            GLfloat upper_freq = MomonicaGlobals::momonica_holes[this->m_index + 1]->m_frequency;
+            this->m_high_voice->noteOn(upper_freq, 0.5);
+            GLfloat lower_freq = MomonicaGlobals::momonica_holes[this->m_index - 1]->m_frequency;
+            this->m_low_voice->noteOn(lower_freq, 0.5);
+        }
+        
+    }
+    else{
+        this->m_high_voice->noteOff(1.0);
+        this->m_low_voice->noteOff(1.0);
+    }
+    
+}
+
+
 BOOL MomonicaHole::isWithinBounds(Vector3D point){
     GLfloat half_width = 0.5 * this->sca.x;
     GLfloat half_height = 0.5 * this->sca.y;

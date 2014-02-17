@@ -32,6 +32,15 @@
 		058C555618A461A700C3E534 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C552D18A461A700C3E534 /* UIKit.framework */; };
 		058C555E18A461A700C3E534 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 058C555C18A461A700C3E534 /* InfoPlist.strings */; };
 		058C556018A461A700C3E534 /* MomonicaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C555F18A461A700C3E534 /* MomonicaTests.m */; };
+		05C6DB8A18B2AB160044E9B9 /* DelayL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05C6DB8918B2AB160044E9B9 /* DelayL.cpp */; };
+		05C6DB8C18B2AB600044E9B9 /* Envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05C6DB8B18B2AB600044E9B9 /* Envelope.cpp */; };
+		05C6DB8E18B2AB750044E9B9 /* OneZero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05C6DB8D18B2AB750044E9B9 /* OneZero.cpp */; };
+		05C6DB9018B2AB800044E9B9 /* SineWave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05C6DB8F18B2AB800044E9B9 /* SineWave.cpp */; };
+		05C6DB9218B2AB8B0044E9B9 /* Noise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05C6DB9118B2AB8B0044E9B9 /* Noise.cpp */; };
+		05C6DB9418B2AB940044E9B9 /* Delay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05C6DB9318B2AB940044E9B9 /* Delay.cpp */; };
+		05C6DB9618B2ABA00044E9B9 /* Stk.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05C6DB9518B2ABA00044E9B9 /* Stk.mm */; };
+		05C6DB9818B2ABB50044E9B9 /* Clarinet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05C6DB9718B2ABB50044E9B9 /* Clarinet.cpp */; };
+		05C6DB9C18B2BCA70044E9B9 /* Saxofony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05C6DB9B18B2BCA70044E9B9 /* Saxofony.cpp */; };
 		05D31CE718A812B500012E97 /* mo_accel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31CE018A812B500012E97 /* mo_accel.mm */; };
 		05D31CE818A812B500012E97 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31CE218A812B500012E97 /* mo_audio.mm */; };
 		05D31CE918A812B500012E97 /* mo_gfx.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05D31CE418A812B500012E97 /* mo_gfx.mm */; };
@@ -87,6 +96,30 @@
 		058C555B18A461A700C3E534 /* MomonicaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MomonicaTests-Info.plist"; sourceTree = "<group>"; };
 		058C555D18A461A700C3E534 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		058C555F18A461A700C3E534 /* MomonicaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomonicaTests.m; sourceTree = "<group>"; };
+		05C6DB7C18B2A9B50044E9B9 /* Clarinet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clarinet.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Clarinet.h"; sourceTree = "<group>"; };
+		05C6DB7D18B2A9C70044E9B9 /* Instrmnt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Instrmnt.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Instrmnt.h"; sourceTree = "<group>"; };
+		05C6DB7E18B2A9DE0044E9B9 /* DelayL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelayL.h; path = "Momonica/api/MoMu-STK-1.0.0/include/DelayL.h"; sourceTree = "<group>"; };
+		05C6DB7F18B2A9F90044E9B9 /* ReedTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReedTable.h; path = "Momonica/api/MoMu-STK-1.0.0/include/ReedTable.h"; sourceTree = "<group>"; };
+		05C6DB8018B2AA130044E9B9 /* Stk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stk.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Stk.h"; sourceTree = "<group>"; };
+		05C6DB8118B2AA230044E9B9 /* Delay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Delay.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Delay.h"; sourceTree = "<group>"; };
+		05C6DB8218B2AA2C0044E9B9 /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filter.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Filter.h"; sourceTree = "<group>"; };
+		05C6DB8318B2AA450044E9B9 /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Function.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Function.h"; sourceTree = "<group>"; };
+		05C6DB8418B2AA720044E9B9 /* OneZero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OneZero.h; path = "Momonica/api/MoMu-STK-1.0.0/include/OneZero.h"; sourceTree = "<group>"; };
+		05C6DB8518B2AA800044E9B9 /* Envelope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Envelope.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Envelope.h"; sourceTree = "<group>"; };
+		05C6DB8618B2AA9A0044E9B9 /* Generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Generator.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Generator.h"; sourceTree = "<group>"; };
+		05C6DB8718B2AABA0044E9B9 /* Noise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Noise.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Noise.h"; sourceTree = "<group>"; };
+		05C6DB8818B2AACE0044E9B9 /* SineWave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SineWave.h; path = "Momonica/api/MoMu-STK-1.0.0/include/SineWave.h"; sourceTree = "<group>"; };
+		05C6DB8918B2AB160044E9B9 /* DelayL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DelayL.cpp; path = "Momonica/api/MoMu-STK-1.0.0/src/DelayL.cpp"; sourceTree = "<group>"; };
+		05C6DB8B18B2AB600044E9B9 /* Envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Envelope.cpp; path = "Momonica/api/MoMu-STK-1.0.0/src/Envelope.cpp"; sourceTree = "<group>"; };
+		05C6DB8D18B2AB750044E9B9 /* OneZero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OneZero.cpp; path = "Momonica/api/MoMu-STK-1.0.0/src/OneZero.cpp"; sourceTree = "<group>"; };
+		05C6DB8F18B2AB800044E9B9 /* SineWave.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SineWave.cpp; path = "Momonica/api/MoMu-STK-1.0.0/src/SineWave.cpp"; sourceTree = "<group>"; };
+		05C6DB9118B2AB8B0044E9B9 /* Noise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Noise.cpp; path = "Momonica/api/MoMu-STK-1.0.0/src/Noise.cpp"; sourceTree = "<group>"; };
+		05C6DB9318B2AB940044E9B9 /* Delay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Delay.cpp; path = "Momonica/api/MoMu-STK-1.0.0/src/Delay.cpp"; sourceTree = "<group>"; };
+		05C6DB9518B2ABA00044E9B9 /* Stk.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Stk.mm; path = "Momonica/api/MoMu-STK-1.0.0/src/Stk.mm"; sourceTree = "<group>"; };
+		05C6DB9718B2ABB50044E9B9 /* Clarinet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clarinet.cpp; path = "Momonica/api/MoMu-STK-1.0.0/src/Clarinet.cpp"; sourceTree = "<group>"; };
+		05C6DB9918B2ABE00044E9B9 /* Skini_msg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Skini_msg.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Skini_msg.h"; sourceTree = "<group>"; };
+		05C6DB9A18B2BC890044E9B9 /* Saxofony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Saxofony.h; path = "Momonica/api/MoMu-STK-1.0.0/include/Saxofony.h"; sourceTree = "<group>"; };
+		05C6DB9B18B2BCA70044E9B9 /* Saxofony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Saxofony.cpp; path = "Momonica/api/MoMu-STK-1.0.0/src/Saxofony.cpp"; sourceTree = "<group>"; };
 		05D31CDF18A812B500012E97 /* mo_accel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_accel.h; path = Momonica/api/momu/mo_accel.h; sourceTree = "<group>"; };
 		05D31CE018A812B500012E97 /* mo_accel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_accel.mm; path = Momonica/api/momu/mo_accel.mm; sourceTree = "<group>"; };
 		05D31CE118A812B500012E97 /* mo_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_audio.h; path = Momonica/api/momu/mo_audio.h; sourceTree = "<group>"; };
@@ -216,6 +249,61 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		05C6DB5E18B1BD820044E9B9 /* stk */ = {
+			isa = PBXGroup;
+			children = (
+				05C6DB6118B1BDBC0044E9B9 /* src */,
+				05C6DB6018B1BDA70044E9B9 /* include */,
+				05C6DB5F18B1BD9D0044E9B9 /* rawwaves */,
+			);
+			name = stk;
+			sourceTree = "<group>";
+		};
+		05C6DB5F18B1BD9D0044E9B9 /* rawwaves */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = rawwaves;
+			sourceTree = "<group>";
+		};
+		05C6DB6018B1BDA70044E9B9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				05C6DB7D18B2A9C70044E9B9 /* Instrmnt.h */,
+				05C6DB7E18B2A9DE0044E9B9 /* DelayL.h */,
+				05C6DB9918B2ABE00044E9B9 /* Skini_msg.h */,
+				05C6DB9A18B2BC890044E9B9 /* Saxofony.h */,
+				05C6DB7F18B2A9F90044E9B9 /* ReedTable.h */,
+				05C6DB8218B2AA2C0044E9B9 /* Filter.h */,
+				05C6DB8318B2AA450044E9B9 /* Function.h */,
+				05C6DB8518B2AA800044E9B9 /* Envelope.h */,
+				05C6DB8618B2AA9A0044E9B9 /* Generator.h */,
+				05C6DB8418B2AA720044E9B9 /* OneZero.h */,
+				05C6DB8818B2AACE0044E9B9 /* SineWave.h */,
+				05C6DB8718B2AABA0044E9B9 /* Noise.h */,
+				05C6DB8118B2AA230044E9B9 /* Delay.h */,
+				05C6DB8018B2AA130044E9B9 /* Stk.h */,
+				05C6DB7C18B2A9B50044E9B9 /* Clarinet.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		05C6DB6118B1BDBC0044E9B9 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				05C6DB8D18B2AB750044E9B9 /* OneZero.cpp */,
+				05C6DB9118B2AB8B0044E9B9 /* Noise.cpp */,
+				05C6DB9518B2ABA00044E9B9 /* Stk.mm */,
+				05C6DB9318B2AB940044E9B9 /* Delay.cpp */,
+				05C6DB9718B2ABB50044E9B9 /* Clarinet.cpp */,
+				05C6DB8F18B2AB800044E9B9 /* SineWave.cpp */,
+				05C6DB9B18B2BCA70044E9B9 /* Saxofony.cpp */,
+				05C6DB8918B2AB160044E9B9 /* DelayL.cpp */,
+				05C6DB8B18B2AB600044E9B9 /* Envelope.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
 		05D31CD918A80FCF00012E97 /* core */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +320,7 @@
 		05D31CDA18A80FDA00012E97 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				05C6DB5E18B1BD820044E9B9 /* stk */,
 				05D31CEB18A812C200012E97 /* momu */,
 			);
 			name = api;
@@ -392,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C6DB9618B2ABA00044E9B9 /* Stk.mm in Sources */,
 				05D31CE818A812B500012E97 /* mo_audio.mm in Sources */,
 				05D31CEA18A812B500012E97 /* mo_touch.mm in Sources */,
 				05D31CE718A812B500012E97 /* mo_accel.mm in Sources */,
@@ -400,8 +490,16 @@
 				05D31D0218A8469000012E97 /* MomonicaEntity.mm in Sources */,
 				05D31CEE18A8132D00012E97 /* MomonicaGlobals.mm in Sources */,
 				058C553A18A461A700C3E534 /* main.m in Sources */,
+				05C6DB8E18B2AB750044E9B9 /* OneZero.cpp in Sources */,
+				05C6DB9418B2AB940044E9B9 /* Delay.cpp in Sources */,
+				05C6DB9818B2ABB50044E9B9 /* Clarinet.cpp in Sources */,
+				05C6DB8A18B2AB160044E9B9 /* DelayL.cpp in Sources */,
 				05D31CE918A812B500012E97 /* mo_gfx.mm in Sources */,
 				058C553E18A461A700C3E534 /* MomonicaAppDelegate.m in Sources */,
+				05C6DB8C18B2AB600044E9B9 /* Envelope.cpp in Sources */,
+				05C6DB9218B2AB8B0044E9B9 /* Noise.cpp in Sources */,
+				05C6DB9C18B2BCA70044E9B9 /* Saxofony.cpp in Sources */,
+				05C6DB9018B2AB800044E9B9 /* SineWave.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

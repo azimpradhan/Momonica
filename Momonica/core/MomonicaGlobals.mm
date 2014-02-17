@@ -42,6 +42,16 @@ GLuint MomonicaGlobals::texture[];
 HoleInfo MomonicaGlobals::regular_holes;
 HoleInfo MomonicaGlobals::draw_holes;
 
+stk::Clarinet * MomonicaGlobals::main_clarinet;
+stk::Clarinet * MomonicaGlobals::high_clarinet;
+stk::Clarinet * MomonicaGlobals::low_clarinet;
+
+stk::Saxofony * MomonicaGlobals::main_sax;
+stk::Saxofony * MomonicaGlobals::high_sax;
+stk::Saxofony * MomonicaGlobals::low_sax;
+
+MomonicaHole * MomonicaGlobals::momonica_holes[];
+
 
 
 
