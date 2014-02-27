@@ -19,6 +19,8 @@
 using namespace std;
 std::vector<Entity *> g_entities;
 //MomonicaHole *g_momonica_holes[10];
+GLfloat g_blow_position = 0.5;
+GLfloat g_blow_position_target = 0.5;
 InvisibleTouch *g_lip_touch = NULL;
 TextureObject *g_current_hole = NULL;
 void renderEntities();
@@ -27,13 +29,17 @@ void renderBottomPannel();
 
 
 
+static inline GLfloat interp(GLfloat target, GLfloat current, GLfloat slew){
+    return (target - current)*slew + current;
+}
+
 
 
 
 void accelCallback( double x, double y, double z, void * data )
 {
-    
-    
+    //NSLog(@"x value is %f", x/2.2 + 0.5);
+    g_blow_position_target = x/2.2 + 0.5;
     
 }
 
@@ -44,6 +50,12 @@ void accelCallback( double x, double y, double z, void * data )
 //-----------------------------------------------------------------------------
 void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
 {
+ 
+    g_blow_position = interp(g_blow_position_target, g_blow_position, 0.01);
+    MomonicaGlobals::main_sax->setBlowPosition(g_blow_position);
+
+    //NSLog(@"x blow_position is %f", g_blow_position);
+
     // our x
     SAMPLE x = 0;
     // increment
@@ -429,7 +441,7 @@ void MomonicaInit()
         MomonicaGlobals::high_sax = new stk::Saxofony(8.0);
         MomonicaGlobals::low_sax = new stk::Saxofony(8.0);
         
-        MomonicaGlobals::main_sax->setBlowPosition(0.458);
+        MomonicaGlobals::main_sax->setBlowPosition(0.5);
         MomonicaGlobals::high_sax->setBlowPosition(0.5);
         MomonicaGlobals::low_sax->setBlowPosition(0.5);
 
@@ -501,7 +513,7 @@ void readMyLips(){
             }
             else{
                 //turn the synth off
-                NSLog(@"left index %d", i);
+                //NSLog(@"left index %d", i);
                 MomonicaGlobals::momonica_holes[i]->releaseHole();
 
 //                g_momonica_holes[i]->releaseHole();
